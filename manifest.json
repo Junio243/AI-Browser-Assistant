@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "AI Browser Assistant",
-    "version": "1.0.0",
+    "version": "3.0.0",
     "description": "Assistente de IA que opera o navegador por você usando Google Gemini",
     "author": "AI Browser Assistant",
     "permissions": [
