@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AI Browser Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 260px;
+            font-family: 'Inter', sans-serif;
+            background: #0d0e1a;
+            color: #f1f2f6;
+            padding: 0;
+        }
+
+        .popup-header {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            padding: 18px 16px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .popup-icon {
+            font-size: 28px;
+        }
+
+        .popup-title {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .popup-sub {
+            font-size: 11px;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+
+        .popup-body {
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .status-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            background: #13141f;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .dot.ok {
+            background: #22c55e;
+            box-shadow: 0 0 6px #22c55e;
+            animation: pulse 2s infinite;
+        }
+
+        .dot.error {
+            background: #ef4444;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: .4
+            }
+        }
+
+        .btn-open {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 11px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn-open:hover {
+            opacity: 0.85;
+        }
+
+        .btn-settings {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+            padding: 9px;
+            background: #1a1b2e;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            color: #a8abbe;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-settings:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            color: #6366f1;
+        }
+
+        .version {
+            text-align: center;
+            font-size: 10px;
+            color: #444566;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="popup-header">
+        <div class="popup-icon">🤖</div>
+        <div>
+            <div class="popup-title">AI Browser Assistant</div>
+            <div class="popup-sub">Powered by Google Gemini</div>
+        </div>
+    </div>
+
+    <div class="popup-body">
+        <div class="status-row">
+            <div class="dot" id="dot"></div>
+            <span id="statusMsg">Verificando...</span>
+        </div>
+
+        <button class="btn-open" id="openPanel">
+            💬 Abrir Painel IA
+        </button>
+
+        <button class="btn-settings" id="openSettings">
+            ⚙️ Configurações
+        </button>
+
+        <div class="version">AI Browser Assistant v1.0.0</div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
